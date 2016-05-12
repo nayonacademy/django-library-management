@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock title %}
+{% block content %}
+<div id="books_add" class="full_box">
+	<h2>Add New Students</h2>
+  <div class="dda_container" id="search_main">
+  	<form id="submit_entry" method="post" enctype="multipart/form-data" action="/library/manual-entry-process">
+      <div class="blk">
+        <label>Name</label>
+        <input type="text">
+        <div class="clear"></div>
+      </div>
+      <div class="blk">
+        <label>Father Name</label>
+        <input type="text">
+        <div class="clear"></div>
+      </div>
+      <div class="blk">
+        <label>Mother Name</label>
+        <input type="text">
+        <div class="clear"></div>
+      </div>
+      <div class="blk">
+        <label>Unique ID</label>
+        <input type="text">
+        <div class="clear"></div>
+      </div>
+      <div class="blk">
+        <label>Phone</label>
+        <input type="text">
+        <div class="clear"></div>
+      </div>
+      <div class="blk">
+        <label>Email</label>
+        <input type="text">
+        <div class="clear"></div>
+      </div>
+      <div class="blk">
+        <label>Address</label>
+        <textarea></textarea>
+        <div class="clear"></div>
+      </div>
+
+      <div class="clear"></div>
+  		<button onclick="return false;" id="submit_manual">Add New Student</button>
+  	</form>
+  </div>
+  <div class="clear"></div>
+</div>
+{% endblock content %}

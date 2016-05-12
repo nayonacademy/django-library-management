@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}{% endblock title %}Core5.io - Home - Private/home library management web app</title>
+<meta charset="UTF-8">
+<meta name="viewport" id="viewport">
+<link href='{% static 'css/chosen.min.css' %} rel=' stylesheet' type='text/css'>
+<link href='{% static 'css/library.css' %}' rel='stylesheet' type='text/css' media="screen">
+<link href='{% static 'css/mobile.css' %}' rel='stylesheet' type='text/css' media="screen">
+<link href='{% static 'css/mobile.css' %}' rel='stylesheet' type='text/css' media="print">
+<script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+</head>
+<body class="">
+<div class="fw-wrapper">
+<div id="first-sidebar">
+	<header id="lib_header"><h1 class="lib_title"><a href="#">Core5.io</a></h1></header>
+	<div class="nav-wrap">
+		<nav class="first">
+			<ul>
+				<li id="menu-home"><a href="{% url 'dashboard' %}">Home</a></li>
+				<li id="menu-add-library"><a href="{% url 'book_distribution' %}">Book Distribution</a></li>
+				<li id="menu-add-items"><a href="{% url 'add_new_book' %}">Add Books</a></li>
+				<li id="menu-contact"><a href="{% url 'add_book_cat' %}">Books Category</a></li>
+				<li id="menu-add-items"><a href="{% url 'add_new_student' %}">Add Students</a></li>
+				<li id="menu-publish"><a href="{% url 'revenue_month_report' %}">Reports</a></li>
+				<li id="menu-settings"><a href="{% url 'settings' %}">Settings</a></li>
+				<li id="menu-logout"><a href="#">LogOut</a></li>				
+			</ul>
+		</nav>		
+	</div>
+</div>
+	<article id="library_page" class="mid-wrapper">
+    <div id="mobile-library-header" class="mobile">
+      <ul id="mobile-library-menu">
+        <li><a class="open-menu" href="#">Menu</a></li>
+        <li><a class="tiny-logo" href="/library/home">Libib</a></li>
+        <li><a class="open-feed" href="#">Feed</a></li>
+      </ul>
+    </div>
+		<div class="mid-header">
+			<div id="library_search">
+				<input type="text" placeholder="search : Book Name, Author Name, Category" name="search_local" id="search_local" value="" class="">
+			</div
+		</div>
+		<div class="inner-wrapper">
+            {% block content %} {% endblock content %}
+		</div>
+	</article>
+	<div class="clear"></div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+label {
+  display: inline-block;
+  width: 145px !important;
+}
+.blk > input, .blk > select, .blk > textarea {
+  width: 400px;
+}
+td {
+  border: 1px solid;
+  padding: 6px 7px 5px;
+}
+.update:hover{
+	color: green;
+}
+.del:hover{
+	color: red;
+}
+.details td:first-child {
+  width: 35%;
+}
+#library_inner > ul {
+  list-style: outside none none;
+  padding: 0;
+}
+.cover.cover_search {
+  float: left;
+  margin-top: 4px !important;
+  padding-right: 7px;
+}
+#library_inner li {
+  border-bottom: 1px solid;
+  display: inline-block;
+  margin-bottom: 17px;
+}
+.detai h3 {
+  padding-top: 10px;
+}
+.detai p {
+  line-height: 21px;
+  margin: 6px 0;
+}
+.cat {
+  color: #40e0d0;
+  display: block;
+  font-family: fantasy;
+}
+.nava {
+  background: #ffbdbd;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  color: #000000;
+  display: inline-block;
+  font-size: 10px;
+  margin: 6px 0;
+  padding: 3px;
+}

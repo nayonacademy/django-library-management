@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock title %}
+{% block content %}
+<div id="books_add" class="full_box">
+	<h2>Report(Revenue Year Wise)</h2>
+  <div class="dda_container" id="search_main">
+  	<form id="submit_entry" method="post" enctype="multipart/form-data" action="">
+      <div class="blk">
+        <label>Year</label>
+        <select>
+          <option>Combo Box</option>
+          <option>Combo Box</option>
+          <option>Combo Box</option>
+          <option>Combo Box</option>
+        </select>
+        <div class="clear"></div>
+      </div>
+      <div class="blk">
+        <label>Total</label>
+         <input type="text">
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+  		<button onclick="return false;" id="submit_manual">Submit</button>
+  	</form>
+  </div>
+  <div class="clear"></div>
+</div>
+{% endblock content %}

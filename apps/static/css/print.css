@@ -1,0 +1,59 @@
+#first-sidebar, 
+#second-sidebar, 
+.mid-header, 
+.tab-wrap, 
+.lib_small, 
+#mobile-library-header,
+#post_form,
+#library_list,
+#letter-range-holder,
+#notification_modal,
+.book_expanded_controls,
+#flag_form,
+.item_submenu,
+.status_scroll,
+.notes_text,
+.groups_text,
+.review_text,
+.move_text,
+.tags_text,
+.barcodes
+{
+  display: none;
+}
+
+/* Ensure the content spans the full width */
+.full_box
+{
+  font-family: arial, helvetica, sans-serif;
+  width: 95%; 
+  margin: auto; 
+  float: none;
+  color: #000;
+  font-size: 13px;
+}
+.checked_out_table {
+  width: 90%;
+}
+.checked_out_table tr th,
+.checked_out_table tr td {
+  text-align: left;
+}
+
+.checked_out_table tr td:nth-child(3), 
+.checked_out_table tr th:nth-child(3), 
+.checked_out_table tr td:last-child,
+.checked_out_table tr th:last-child {
+  display: none;
+}
+
+.lend_image img {
+  width: 30px;
+  height: auto;
+  float: right;
+}
+.lent_title {
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
