@@ -16,17 +16,18 @@
         <th>Total Read Book</th>
         <th>Action</th>
       </tr>
-{#        {% for obj in object_list %}#}
-      <tr>
-        <td>{{ obj.id }}sff</td>
-        <td>{{ obj.father_name }}</td>
-        <td>{{ obj.mother_name }}</td>
-        <td>{{ obj.phone }}</td>
-        <td>0</td>
-        <td>0</td>
-        <td><a href="#" class="update">Update</a> | <a href="#" class="del">Delete</a></td>
-      </tr>
-{#        {% endfor %}#}
+        {% for obj in object_list %}
+          <tr>
+            <td>{{ obj.id }}</td>
+            <td>{{ obj.name }}</td>
+            <td>{{ obj.father_name }}</td>
+            <td>{{ obj.mother_name }}</td>
+            <td>{{ obj.phone }}</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a href="#" class="update">Update</a> | <a href="#" class="del">Delete</a></td>
+          </tr>
+        {% endfor %}
     </table>
   </div>
   <div class="clear"></div>

@@ -5,7 +5,7 @@
 <div id="books_add" class="full_box">
 	<h2>Add Books</h2>
   <div class="dda_container" id="search_main">
-  	<form id="submit_entry" method="post" enctype="multipart/form-data" action="/library/manual-entry-process">
+  	<form id="submit_entry" method="POST" enctype="multipart/form-data" action="/library/manual-entry-process">
       <div class="blk">
         <label>Book Name</label>
         <input type="text">
@@ -24,16 +24,20 @@
       <div class="blk">
         <label>Category Name</label>
         <select>
-          <option>Nobel</option>
-          <option>Story</option>
-          <option>class fiv</option>
-          <option>class ten</option>
+            {% for obj in object_list %}
+                <option>{{ obj.name }}</option>
+            {% endfor %}
         </select>
         <div class="clear"></div>
       </div>
     	<div class="blk">
         <label>Description</label>
         <textarea></textarea>
+        <div class="clear"></div>
+      </div>
+      <div class="blk">
+        <label>Book Cover Photo.</label>
+        <input type="file">
         <div class="clear"></div>
       </div>
       <div class="clear"></div>

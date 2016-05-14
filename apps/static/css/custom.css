@@ -1,5 +1,5 @@
 label {
-  display: inline-block;
+  display: block;
   width: 145px !important;
 }
 .blk > input, .blk > select, .blk > textarea {

@@ -1,4 +1,6 @@
-from apps.forms import CategoryForm, AddStudentForm
+from django.http.response import HttpResponseRedirect
+
+from apps.forms import *
 from .models import *
 # Create your views here.
 from django.shortcuts import render
@@ -17,7 +19,11 @@ def book_distribution(request):
 
 
 def add_new_book(request):
-    return render(request, '03addBook.html')
+    quseryset_cat = Category.objects.all()
+    context = {
+        "object_list": quseryset_cat,
+    }
+    return render(request, '03addBook.html', context)
 
 
 def add_book_cat(request):
@@ -25,9 +31,9 @@ def add_book_cat(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-
+        return HttpResponseRedirect('../book_cat_list')
     context = {
-        "form": form
+        "form": form,
     }
     return render(request, '04books_cat.html', context)
 
@@ -45,8 +51,9 @@ def add_new_student(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
+        return HttpResponseRedirect("../student_list")
     context = {
-        "form": form
+        "form": form,
     }
     return render(request, '05add_new_student.html', context)
 
