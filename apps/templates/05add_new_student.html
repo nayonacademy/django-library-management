@@ -5,45 +5,46 @@
 <div id="books_add" class="full_box">
 	<h2>Add New Students</h2>
   <div class="dda_container" id="search_main">
-  	<form id="submit_entry" method="post" enctype="multipart/form-data" action="/library/manual-entry-process">
+  	<form id="submit_entry" method="post" action="">
+        {% csrf_token %}
       <div class="blk">
         <label>Name</label>
-        <input type="text">
+        {{ form.name }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Father Name</label>
-        <input type="text">
+        {{ form.father_name }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Mother Name</label>
-        <input type="text">
+        {{ form.mother_name }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Unique ID</label>
-        <input type="text">
+        {{ form.unique_id }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Phone</label>
-        <input type="text">
+        {{ form.phone }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Email</label>
-        <input type="text">
+        {{ form.email }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Address</label>
-        <textarea></textarea>
+        {{ form.address }}
         <div class="clear"></div>
       </div>
 
       <div class="clear"></div>
-  		<button onclick="return false;" id="submit_manual">Add New Student</button>
+  		<button id="submit_manual" type="submit">Add New Student</button>
   	</form>
   </div>
   <div class="clear"></div>

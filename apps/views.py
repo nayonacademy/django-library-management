@@ -1,5 +1,5 @@
-from django.http.response import HttpResponse
-
+from apps.forms import CategoryForm, AddStudentForm
+from .models import *
 # Create your views here.
 from django.shortcuts import render
 
@@ -21,11 +21,42 @@ def add_new_book(request):
 
 
 def add_book_cat(request):
-    return render(request, '04books_cat.html')
+    form = CategoryForm(request.POST)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+
+    context = {
+        "form": form
+    }
+    return render(request, '04books_cat.html', context)
+
+
+def book_cat_list(request):
+    queryset = Category.objects.all()
+    context = {
+        "object_list": queryset
+    }
+    return render(request, '401books_cat_list.html', context)
 
 
 def add_new_student(request):
-    return render(request, '05add_new_student.html')
+    form = AddStudentForm(request.POST)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+    context = {
+        "form": form
+    }
+    return render(request, '05add_new_student.html', context)
+
+
+def student_list(request):
+    queryset = AddStudent.objects.all()
+    context = {
+        "object_list": queryset
+    }
+    return render(request, '501students_list.html', context)
 
 
 def settings(request):
@@ -34,10 +65,6 @@ def settings(request):
 
 def search_page(request):
     return render(request, '08search_page.html')
-
-
-def student_list(request):
-    return render(request, '501students_list.html')
 
 
 def student_details(request):

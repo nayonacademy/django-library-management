@@ -3,30 +3,21 @@
 {% block title %}Dashboard{% endblock title %}
 {% block content %}
 <div id="books_add" class="full_box">
-    <h2>Students List</h2>
+	<h2>Category List</h2>
   <div class="dda_container" id="search_main">
     <table style="width: 100%;">
       <tr>
-        <th>Id</th>
-        <th>Student Name</th>
-        <th>Father Name</th>
-        <th>Mother Name</th>
-        <th>Phone</th>
-        <th>Non Return</th>
-        <th>Total Read Book</th>
+        <th>SL</th>
+        <th>Category Name</th>
         <th>Action</th>
       </tr>
-{#        {% for obj in object_list %}#}
+        {% for obj in object_list %}
       <tr>
-        <td>{{ obj.id }}sff</td>
-        <td>{{ obj.father_name }}</td>
-        <td>{{ obj.mother_name }}</td>
-        <td>{{ obj.phone }}</td>
-        <td>0</td>
-        <td>0</td>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.name }}</td>
         <td><a href="#" class="update">Update</a> | <a href="#" class="del">Delete</a></td>
       </tr>
-{#        {% endfor %}#}
+        {% endfor %}
     </table>
   </div>
   <div class="clear"></div>

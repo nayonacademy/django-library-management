@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^book_distribution/$', views.book_distribution, name="book_distribution"),
     url(r'^add_new_book/$', views.add_new_book, name="add_new_book"),
     url(r'^add_book_cat/$', views.add_book_cat, name="add_book_cat"),
+    url(r'^book_cat_list/$', views.book_cat_list, name="book_cat_list"),
     url(r'^add_new_student/$', views.add_new_student, name="add_new_student"),
     url(r'^settings/$', views.settings, name="settings"),
     url(r'^search_page/$', views.search_page, name="search_page"),
