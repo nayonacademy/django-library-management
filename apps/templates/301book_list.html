@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock title %}
+{% block content %}
+<div id="books_add" class="full_box">
+    <h2>Students List</h2>
+  <div class="dda_container" id="search_main">
+    <table style="width: 100%;">
+      <tr>
+        <th>Id</th>
+        <th>Book Name</th>
+        <th>Author Name</th>
+        <th>Category Name</th>
+        <th>Unique ID</th>
+        <th>Action</th>
+      </tr>
+        {% for obj in object_list %}
+          <tr>
+            <td>{{ obj.id }}</td>
+            <td>{{ obj.name }}</td>
+            <td>{{ obj.father_name }}</td>
+            <td>{{ obj.mother_name }}</td>
+            <td>{{ obj.phone }}</td>
+            <td>0</td>
+            <td>0</td>
+            <td><a href="#" class="update">Update</a> | <a href="#" class="del">Delete</a></td>
+          </tr>
+        {% endfor %}
+    </table>
+  </div>
+  <div class="clear"></div>
+</div>
+{% endblock content %}

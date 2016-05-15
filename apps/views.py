@@ -26,6 +26,10 @@ def add_new_book(request):
     return render(request, '03addBook.html', context)
 
 
+def book_list(request):
+    return render(request, '301book_list.html')
+
+
 def add_book_cat(request):
     form = CategoryForm(request.POST)
     if form.is_valid():

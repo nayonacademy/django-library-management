@@ -22,7 +22,12 @@
 			<ul class="vertical menu" data-accordion-menu>
 				<li id="menu-home"><a href="{% url 'dashboard' %}">Home</a></li>
 				<li id="menu-add-library"><a href="{% url 'book_distribution' %}">Book Distribution</a></li>
-				<li id="menu-add-items"><a href="{% url 'add_new_book' %}">Add Books</a></li>
+				<li id="menu-add-items"><a href="#">Books</a>
+                    <ul class="menu vertical nested">
+                      <li><a href="{% url 'book_list' %}">Book List</a></li>
+                      <li><a href="{% url 'add_new_book' %}">Add New</a></li>
+                    </ul>
+                </li>
 				<li id="menu-contact"><a href="#">Books Category</a>
                     <ul class="menu vertical nested">
                       <li><a href="{% url 'book_cat_list' %}">Categories</a></li>
@@ -40,24 +45,13 @@
 				<li id="menu-logout"><a href="#">LogOut</a></li>
 			</ul>
 		</nav>
-{#        <ul class="vertical menu" data-accordion-menu>#}
-{#          <li>#}
-{#            <a href="#">Item 1</a>#}
-{#            <ul class="menu vertical nested">#}
-{#              <li><a href="#">Item 1A</a></li>#}
-{#              <li><a href="#">Item 1B</a></li>#}
-{#            </ul>#}
-{#          </li>#}
-{#          <li><a href="#">Item 2</a></li>#}
-{#        </ul>#}
 	</div>
-
 </div>
 	<article id="library_page" class="mid-wrapper">
 		<div class="mid-header">
 			<div id="library_search">
 				<input type="text" placeholder="search : Book Name, Author Name, Category" name="search_local" id="search_local" value="" class="">
-			</div
+			</div>
 		</div>
 		<div class="inner-wrapper">
             {% block content %} {% endblock content %}
