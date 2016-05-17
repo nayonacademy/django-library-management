@@ -34,12 +34,11 @@ class AddBook(models.Model):
     def __str__(self):
         return self.book_name
 
-
+# BookDistribution
 class LogFile(models.Model):
     student_id = models.ForeignKey(AddStudent)
     book_id = models.ForeignKey(AddBook)
-    total_book = models.IntegerField()
-    borrow = models.IntegerField()
+    return_status = models.BooleanField(default=0)
     amount = models.IntegerField()
 
     def __str__(self):

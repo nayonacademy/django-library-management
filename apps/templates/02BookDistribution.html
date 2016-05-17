@@ -5,59 +5,48 @@
 <div id="books_add" class="full_box">
 	<h2>Book Distribution</h2>
   <div class="dda_container" id="search_main">
-  	<form id="submit_entry" method="post" enctype="multipart/form-data" action="">
+  	<form id="submit_entry" method="POST" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        <table><tr><td>
       <div class="blk">
         <label>Book Name</label>
-        <input type="text" placeholder="Write to Search">
+        {{ form.book_id }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Student ID</label>
-         <input type="text" placeholder="Write to Search">
+         {{ form.student_id }}
         <div class="clear"></div>
       </div>
-      <div class="blk">
+
+
+
+
+
+            </td>
+            <td>
+                <div class="blk">
         <label>Name</label>
-        <input type="text" data-customforms="disabled">
+        <input type="text" disabled="true">
         <div class="clear"></div>
       </div>
-      <div class="blk">
-        <label>Class, Section, Shift</label>
-        <input type="text">
-        <div class="clear"></div>
-      </div>
-      <div class="blk">
-        <label>Total Read Book</label>
-        <input type="text">
-        <div class="clear"></div>
-      </div>
-      <div class="blk">
+                <div class="blk">
         <label>Total Borrow Book</label>
-        <input type="text">
-        <div class="clear"></div>
-      </div>
-      <div class="blk">
-        <label>Total Return Book</label>
-        <input type="text">
-        <div class="clear"></div>
-      </div>
-      <div class="blk">
-        <label>Book No Return</label>
-        <input type="text">
-        <div class="clear"></div>
+       <span class="label">0</span>
       </div>
       <div class="blk">
         <label>Non Return Book</label>
-        <input type="text">
-        <div class="clear"></div>
+        <span class="label">0</span>
       </div>
     	<div class="blk">
         <label>Total Due</label>
-        <input type="text">
-        <div class="clear"></div>
+        <span class="label">0</span>
       </div>
-      <div class="clear"></div>
-  		<button onclick="return false;" id="submit_manual">Submit</button>
+
+            </td>
+        </tr></table>
+        <div class="clear"></div>
+  		<button type="submit" id="submit_manual">Submit</button>
   	</form>
   </div>
   <div class="clear"></div>

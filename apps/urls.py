@@ -41,7 +41,6 @@ urlpatterns += patterns('',
     url(r'^add_new_student/$', views.add_new_student, name="add_new_student"),
     url(r'^student_list/$', views.student_list, name="student_list"),
     url(r'^student_details/$', views.student_details, name="student_details"),
-    # url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT},),
 )
 
 urlpatterns += patterns('',
