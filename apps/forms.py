@@ -1,5 +1,5 @@
 from django import forms
-from .models import Category, AddStudent, AddBook
+from .models import *
 
 
 class CategoryForm(forms.ModelForm):
@@ -12,3 +12,9 @@ class AddStudentForm(forms.ModelForm):
     class Meta:
         model = AddStudent
         fields = "__all__"
+
+
+class BookForm(forms.ModelForm):
+    class Meta:
+        model = AddBook
+        fields = '__all__'

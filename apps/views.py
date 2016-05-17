@@ -1,9 +1,12 @@
+from django.core.urlresolvers import reverse
+
 from django.http.response import HttpResponseRedirect
+from django.template.context import RequestContext
 
 from apps.forms import *
 from .models import *
 # Create your views here.
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 
 
 def login(request):
@@ -19,15 +22,27 @@ def book_distribution(request):
 
 
 def add_new_book(request):
-    quseryset_cat = Category.objects.all()
+
+    if request.method == 'POST':
+        form = BookForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        return HttpResponseRedirect('../book_list')
+    else:
+        form = BookForm()
+
     context = {
-        "object_list": quseryset_cat,
+        'form': form,
     }
     return render(request, '03addBook.html', context)
 
 
 def book_list(request):
-    return render(request, '301book_list.html')
+    query_set = AddBook.objects.all()
+    context = {
+        "object_all": query_set,
+    }
+    return render(request, '301book_list.html', context)
 
 
 def add_book_cat(request):

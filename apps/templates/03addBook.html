@@ -9,40 +9,36 @@
     {% csrf_token %}
       <div class="blk">
         <label>Book Name</label>
-        <input type="text">
+        {{ form.book_name }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Author Name</label>
-        <input type="text">
+        {{ form.author_name }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Unique No.</label>
-        <input type="text">
+        {{ form.unique_no }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Category Name</label>
-        <select>
-            {% for obj in object_list %}
-                <option>{{ obj.name }}</option>
-            {% endfor %}
-        </select>
+        {{ form.category_name }}
         <div class="clear"></div>
       </div>
     	<div class="blk">
         <label>Description</label>
-        <textarea></textarea>
+        {{ form.description }}
         <div class="clear"></div>
       </div>
       <div class="blk">
         <label>Book Cover Photo.</label>
-        <input type="file">
+        {{ form.image }}
         <div class="clear"></div>
       </div>
       <div class="clear"></div>
-  		<button onclick="return false;" id="submit_manual">Submit</button>
+  		<button id="submit_manual" type="submit">Submit</button>
   	</form>
   </div>
   <div class="clear"></div>

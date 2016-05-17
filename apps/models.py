@@ -29,7 +29,7 @@ class AddBook(models.Model):
     unique_no = models.CharField(max_length=45, null=True, blank=True, unique=True)
     category_name = models.ForeignKey(Category)
     description = models.TextField()
-    image = models.FileField(upload_to='documents/%Y/%m/%d')
+    image = models.ImageField(upload_to='images/', blank=True)
 
     def __str__(self):
         return self.book_name
