@@ -1,12 +1,10 @@
-from django.core.urlresolvers import reverse
-
 from django.http.response import HttpResponseRedirect, HttpResponse
-from django.template.context import RequestContext
+
 
 from apps.forms import *
 from .models import *
 # Create your views here.
-from django.shortcuts import render, render_to_response, redirect
+from django.shortcuts import render, redirect
 
 
 def login(request):
@@ -21,22 +19,20 @@ def book_distribution(request):
     if request.method == 'POST':
         form = BookDisForm(request.POST)
         if form.is_valid():
-            ins=form.save(commit=False)
-            ins.return_status=0
-            ins.amount=0
+            ins = form.save(commit=False)
+            ins.return_status = 0
+            ins.amount = 0
             ins.save()
             return redirect('/')
         else:
             return HttpResponse(form.errors)
     else:
-        form=BookDisForm()
-        sname=AddStudent.objects.all()
+        form = BookDisForm()
         context = {
-        'form': form,
-            'sname':sname
+            'form': form
         }
 
-        return render(request, '02BookDistribution.html',context)
+        return render(request, '02BookDistribution.html', context)
 
 
 def add_new_book(request):
@@ -129,6 +125,3 @@ def revenue_month_report(request):
 
 def revenue_year_report(request):
     return render(request, '602Revenueyear.html')
-
-
-
